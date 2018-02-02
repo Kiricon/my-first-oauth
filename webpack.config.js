@@ -1,13 +1,14 @@
+
 const path = require('path');
 module.exports = {
-    entry: "./js/oauth.js",
+    entry: "./oauth.js",
     output: {
-        path: path.join(__dirname, "js"),
+        path: path.join(__dirname),
         filename: "oauth.bundle.js"
     },
     resolve: {
         // Add '.ts' and '.tsx' as a resolvable extension.
-        extensions: [".webpack.js", ".web.js", ".js", "json"],
+        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
         modules: [
             path.resolve('./node_modules'),
             path.resolve('./')
@@ -16,8 +17,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname),
         compress: true,
-        port: 3000,
-        historyApiFallback: true
+        port: 3000
       },
     watch: true
 }
